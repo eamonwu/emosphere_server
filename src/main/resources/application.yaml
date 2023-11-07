@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: 123456
+    password: wem161534807
     url: jdbc:mysql://8.136.81.197:3306/emosphere?useSSL=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     mvc:

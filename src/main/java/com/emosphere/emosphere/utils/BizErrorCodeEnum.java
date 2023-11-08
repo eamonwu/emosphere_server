@@ -35,7 +35,14 @@ public enum BizErrorCodeEnum  {
      * 好友申请异常
      **/
     RELATIONSHIP_ALREADY_EXIST(5001, "双方已经是好友"),
-    DONT_REQUEST_YOURSELF(5002, "你不要加自己为好友好伐");
+    DONT_REQUEST_YOURSELF(5002, "你不要加自己为好友好伐"),
+
+
+    /**
+     * 情绪记录异常
+     **/
+    MOOD_RECORD_DOESNT_EXIST(6000, "记录不存在"),
+    DUPLICATED_RECORD(6001, "当天存在记录或记录重复");
 
     /**
      * 错误码

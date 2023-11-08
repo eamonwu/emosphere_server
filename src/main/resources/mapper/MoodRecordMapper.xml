@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emosphere.emosphere.mapper.MoodRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.emosphere.emosphere.domain.MoodRecord">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="uid" column="uid" jdbcType="INTEGER"/>
+            <id property="mood" column="mood" jdbcType="VARCHAR"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="illustration" column="illustration" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,mood,
+        title,content,create_date,
+        illustration
+    </sql>
+</mapper>

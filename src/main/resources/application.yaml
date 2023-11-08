@@ -8,3 +8,10 @@ spring:
       pathmatch:
         matching-strategy: ANT_PATH_MATCHER
 
+# 七牛云存储
+oss:
+  qiniu:
+    domain: http://s3szduzqb.hd-bkt.clouddn.com # 访问域名(默认使用七牛云测试域名)
+    accessKey: FU6ymPz5Uo5XOzi6CkqnoPW9yq3VQ39ghvDOtgYk # 公钥
+    secretKey: C9jyMHsQRwPi6KzAWaWU3DPN-X2-Mo91HNHmx-gw # 私钥
+    bucketName: emoshpere  #存储空间名称

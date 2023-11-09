@@ -11,12 +11,6 @@ import com.emosphere.emosphere.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.transform.Result;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.YearMonth;
-import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -73,16 +67,15 @@ public class MoodRecordServiceImpl extends ServiceImpl<MoodRecordMapper, MoodRec
     }
 
     @Override
-    public Integer deleteMoodRecordById(int id) {
-        Integer status = moodRecordMapper.deleteById(id);
+    public void deleteMoodRecordById(int id) {
+        int status = moodRecordMapper.deleteById(id);
         if (status != 1) {
             throw new BizException(BizErrorCodeEnum.MOOD_RECORD_DOESNT_EXIST);
         }
-        return status;
     }
 
     @Override
-    public Integer addMoodRecord(MoodRecord moodRecord) {
+    public void addMoodRecord(MoodRecord moodRecord) {
         moodRecord.setId(null);
         if (moodRecord.getCreateDate() != null) {
             moodRecord.setCreateDate(new Date());
@@ -96,7 +89,7 @@ public class MoodRecordServiceImpl extends ServiceImpl<MoodRecordMapper, MoodRec
         if (counts > 0) {
             throw new BizException(BizErrorCodeEnum.DUPLICATED_RECORD);
         }
-        return moodRecordMapper.insert(moodRecord);
+        moodRecordMapper.insert(moodRecord);
     }
 }
 

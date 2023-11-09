@@ -20,7 +20,6 @@ public interface MoodRecordService extends IService<MoodRecord> {
     MoodRecord getMoodRecordByDay(int uid,Date date);
     List<MoodRecord> getMoodRecordByMonth(int uid,Date date);
 
-    Integer deleteMoodRecordById(int id);
-
-    Integer addMoodRecord(MoodRecord moodRecord);
+    void deleteMoodRecordById(int id);
+    void addMoodRecord(MoodRecord moodRecord);
 }

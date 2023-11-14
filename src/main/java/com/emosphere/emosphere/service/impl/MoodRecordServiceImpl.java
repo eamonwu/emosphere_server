@@ -77,9 +77,7 @@ public class MoodRecordServiceImpl extends ServiceImpl<MoodRecordMapper, MoodRec
     @Override
     public void addMoodRecord(MoodRecord moodRecord) {
         moodRecord.setId(null);
-        if (moodRecord.getCreateDate() != null) {
-            moodRecord.setCreateDate(new Date());
-        }
+        moodRecord.setCreateDate(new Date());
         DateUtil util = new DateUtil();
         Date now = new Date();
         QueryWrapper<MoodRecord> queryWrapper = new QueryWrapper<MoodRecord>()

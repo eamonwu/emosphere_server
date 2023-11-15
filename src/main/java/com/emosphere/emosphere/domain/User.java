@@ -24,13 +24,23 @@ public class User implements Serializable {
     /**
      *
      */
-    @TableId
+
     private String phone;
 
     /**
      *
      */
     private String username;
+
+    /**
+     *
+     */
+    private String pwd;
+
+    /**
+     *
+     */
+    private Date birthday;
 
     /**
      *
@@ -75,6 +85,8 @@ public class User implements Serializable {
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
                 && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
                 && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
+                && (this.getPwd() == null ? other.getPwd() == null : this.getPwd().equals(other.getPwd()))
+                && (this.getBirthday() == null ? other.getBirthday() == null : this.getBirthday().equals(other.getBirthday()))
                 && (this.getCreateDate() == null ? other.getCreateDate() == null : this.getCreateDate().equals(other.getCreateDate()))
                 && (this.getLastLoginDate() == null ? other.getLastLoginDate() == null : this.getLastLoginDate().equals(other.getLastLoginDate()))
                 && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
@@ -89,6 +101,8 @@ public class User implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
         result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        result = prime * result + ((getPwd() == null) ? 0 : getPwd().hashCode());
+        result = prime * result + ((getBirthday() == null) ? 0 : getBirthday().hashCode());
         result = prime * result + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         result = prime * result + ((getLastLoginDate() == null) ? 0 : getLastLoginDate().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -106,6 +120,8 @@ public class User implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", phone=").append(phone);
         sb.append(", username=").append(username);
+        sb.append(", pwd=").append(pwd);
+        sb.append(", birthday=").append(birthday);
         sb.append(", createDate=").append(createDate);
         sb.append(", lastLoginDate=").append(lastLoginDate);
         sb.append(", status=").append(status);

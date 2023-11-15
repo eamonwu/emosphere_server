@@ -26,6 +26,8 @@ public enum BizErrorCodeEnum  {
      **/
     USER_LOGIN_ERROR(4000,"登录失败"),
     USER_NOT_EXIST(4001, "用户不存在"),
+    USER_PWD_ERROR(4002, "密码错误"),
+
     USER_AUTHENTICATION_ERROR(4003, "验证错误"),
     USER_IN_BLOCK(4004, "用户被冻结"),
     USER_ACCOUNT_EXIST(4005, "账号已被注册"),

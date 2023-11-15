@@ -2,12 +2,14 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.UserMapper">
+<mapper namespace="com.emosphere.emosphere.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.User">
+    <resultMap id="BaseResultMap" type="com.emosphere.emosphere.domain.User">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <id property="phone" column="phone" jdbcType="VARCHAR"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+            <result property="birthday" column="birthday" jdbcType="TIMESTAMP"/>
             <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
             <result property="lastLoginDate" column="last_login_date" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
@@ -17,7 +19,8 @@
 
     <sql id="Base_Column_List">
         id,phone,username,
-        create_date,last_login_date,status,
-        gender,avatar
+        pwd,birthday,create_date,
+        last_login_date,status,gender,
+        avatar
     </sql>
 </mapper>

@@ -23,13 +23,12 @@ public class Collect implements Serializable {
     /**
      * 
      */
-    @TableId
+
     private Integer uid;
 
     /**
      * 
      */
-    @TableId
     private Integer postId;
 
     @TableField(exist = false)

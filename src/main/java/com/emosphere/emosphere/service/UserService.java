@@ -11,4 +11,6 @@ import com.emosphere.emosphere.domain.UserLoginParam;
 */
 public interface UserService extends IService<User> {
     User login(UserLoginParam userLoginParam);
+
+    User updateUserInfo(User user);
 }

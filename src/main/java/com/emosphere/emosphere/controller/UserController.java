@@ -22,4 +22,8 @@ public class UserController {
         return R.ok("登陆成功").put("user", userService.login(userLoginParam));
     }
 
+    @PostMapping("/update")
+    R updateUserInfo(@RequestBody User user) {
+        return R.ok("更新成功").put("user", userService.updateUserInfo(user));
+    }
 }

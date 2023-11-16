@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.Optional;
 
 /**
  * @author eamon
@@ -56,6 +57,26 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setStatus(null);
         user.setPwd(null);
         return user;
+    }
+
+    @Override
+    public User updateUserInfo(User user) {
+        User oldUser = userMapper.selectById(user.getId());
+        if (oldUser == null) {
+            throw new BizException(BizErrorCodeEnum.USER_NOT_EXIST);
+        }
+        Optional.ofNullable(user.getPwd()).ifPresent(oldUser::setPwd);
+        Optional.ofNullable(user.getAvatar()).ifPresent(oldUser::setAvatar);
+        Optional.ofNullable(user.getBirthday()).ifPresent(oldUser::setBirthday);
+        Optional.ofNullable(user.getUsername()).ifPresent(oldUser::setUsername);
+        Optional.ofNullable(user.getGender()).ifPresent(oldUser::setGender);
+        userMapper.updateById(oldUser);
+
+        return oldUser;
+    }
+
+    void setNotNull(){
+
     }
 }
 
